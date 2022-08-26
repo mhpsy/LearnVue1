@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dataFilter</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" placeholder="please input name" v-model="selectWord">
+        <ul>
+            <li v-for="(m,index) in meth" :key="m.id">{{m.id}}--{{m.name}}--{{m.sex}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                meth:[
+                    {id:1,name:'query',sex:'man'},
+                    {id:2,name:'select',sex:'man'},
+                    {id:3,name:'insert',sex:'man'},
+                    {id:4,name:'update',sex:'man'},
+                ],
+                selectWord:''
+            }
+        })
+    </script>
+</body>
+</html>

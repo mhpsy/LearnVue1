@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="inputModel">
+    姓名：<input type="text" :value="name">
+    <br>
+    地址：<input type="text" v-model="name">
+</div>
+
+
+<script>
+    new Vue({
+        el:'#inputModel',
+        data:{
+            name:'编辑Model'
+        }
+    })
+
+</script>
+</body>
+</html>

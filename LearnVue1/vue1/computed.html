@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓<input type="text" v-model="firstName"><br><br>
+        名<input type="text" v-model="lastName"><br><br>
+        全名<span>{{fullName}}</span><br><br>
+    </div>
+    <script>
+        new Vue({
+            el:'#root',
+            data: {
+                firstName:'qwer',
+                lastName:'asdf'
+            },
+            computed:{
+                fullName:{
+                    get(){
+                        return this.firstName+'-'+this.lastName
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

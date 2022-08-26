@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        {{name}}
+    </div>
+    <script>
+        var x = new Vue({
+            data() {
+                return{
+                    name:'mhpsy'
+                }
+            }
+        })
+        setTimeout(()=>{
+            x.$mount('#root')
+        },1000)
+    </script>
+
+</body>
+</html>

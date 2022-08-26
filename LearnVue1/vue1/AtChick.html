@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AtClick</title>
+  <script src="../js/vue.js"></script>
+
+</head>
+<body>
+<div id="root">
+  <input type="button" @click="showInfo1" value="qwer"><br>
+  <input type="button" @click="showInfo2(66)" value="66">
+</div>
+<script>
+  new Vue({
+    el:'#root',
+    data:{
+      name:'mhpsy'
+    },
+    methods:{
+      showInfo1(){
+        alert('number')
+      },
+      showInfo2(number){
+        alert('number'+number)
+      }
+    }
+  })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1>hello {{name.toUpperCase()}}</h1>
+        <h1>my age is {{age}}</h1>
+    </div>
+    <script>
+        Vue.config.productionTip = false//阻止vue在启动时弹出提示
+
+        //创建Vue实例
+        //实际这里没有必要用const x = new Vue({接收这个vue对象，可以直接new的
+        new Vue({
+            el:'#root',
+            data: {
+                name:'mhpsy',
+                age:22
+            }
+        })
+        //el用于指定当前Vue实例为哪个容器服务，值为css选择器字符串
+        //data用于存储数据，数据供el所指定的容器去使用
+
+    </script>
+
+
+</body>
+</html>

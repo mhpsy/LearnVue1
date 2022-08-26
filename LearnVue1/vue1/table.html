@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+  <ul>
+    <li v-for="p in persons" :key="p.id">
+      {{p.id}}-{{p.name}}-{{p.age}}
+    </li>
+  </ul>
+  <ul>
+    <li v-for="(p,index) in persons" :key="index">
+      {{index+1}} {{p.id}}-{{p.name}}-{{p.age}}
+    </li>
+  </ul>
+  <ul>
+    <li v-for="(val,key) in cat" :key="key">
+      {{key}}--{{val}}
+    </li>
+  </ul>
+</div>
+<script>
+  new Vue({
+    el:'#root',
+    data:{
+      persons:[
+        {id:1,name:'san',age:18},
+        {id:2,name:'sbn',age:19},
+        {id:3,name:'scn',age:20}
+      ],
+      cat:{
+        name:'mhpsy',
+        type:'jia',
+        sex:'女',
+        age:3
+      }
+    }
+  })
+</script>
+</body>
+</html>

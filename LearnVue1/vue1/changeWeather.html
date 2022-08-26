@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changeWeather</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>今天的天气{{showWeather}}</h1>
+    <button @click="isHot=!isHot">反转</button>
+</div>
+<script>
+    const x = new Vue({
+        el: '#root',
+        data: {
+            isHot: true
+        },
+        computed: {
+            showWeather() {
+                return this.isHot ? "炎热" : "不热";
+            }
+        }
+    })
+    x.$watch('isHot',function (newV,oldV) {
+        console.log(newV,oldV)
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="root">
+
+    <a :href="MhpsyUrl">{{name}}</a><br>
+    <a v-bind:href="MhpsyUrl">{{name}}</a>
+
+</div>
+
+<script>
+    new Vue({
+        el:'#root',
+        data:{
+            name:'mhpsy',
+            MhpsyUrl:'http://www.mhpsy.top'
+        }
+    })
+
+
+</script>
+</body>
+</html>

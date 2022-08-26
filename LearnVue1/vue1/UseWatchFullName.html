@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watchFullName</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+  xing<input type="text" v-model="firstName"><br><br>
+  ming<input type="text" v-model="lastName"><br><br>
+    FullName<span> {{fullName}} </span>
+</div>
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            firstName:'zhang',
+            lastName:'san',
+            fullName:'zhang-san'
+        },
+        watch:{
+            //如果直接使用fullName(val),这个val是新值的意思
+            firstName(val){
+                this.fullName=val+'-'+this.lastName
+            },
+            lastName(val){
+                this.fullName=this.firstName+'-'+val
+            }
+        }
+    })
+</script>
+</body>
+</html>

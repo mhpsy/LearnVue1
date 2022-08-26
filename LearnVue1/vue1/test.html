@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let person = {
+        name:'mhpsy',
+        age:18
+    }
+    let sex = '1'
+    Object.defineProperty(person,'sex',{
+        get(){
+            console.log("have some one read")
+            return sex;
+        },
+        set(value){
+            sex = value
+            console.log("have some one modify is",sex)
+        }
+    })
+    console.log(person);
+</script>
+
+</body>
+</html>

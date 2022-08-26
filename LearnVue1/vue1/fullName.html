@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fullName</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+<div id="root">
+    姓<input type="text" v-model="firstName"><br>
+    名<input type="text" v-model="lastName"><br>
+    全名:<span>{{fullName()}}</span><br>
+    这个地方必须要携程方法名()的形式才可以,跟方法绑定不一样
+</div>
+<script>
+    const x = new Vue({
+        el:"#root",
+        data:{
+            firstName:'xiao',
+            lastName:'qiqi'
+        },
+        methods:{
+            fullName(){
+                return this.firstName+'-'+this.lastName
+            }
+        }
+    })
+</script>
+</body>
+</html>

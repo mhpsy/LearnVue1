@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enter</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    {{name}}
+    <input type="text" placeholder="按下回车提示" @keyup.enter="showValue">
+</div>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            name: 'mhpsy'
+        },
+        methods: {
+            showValue(e){
+                console.log(e.target.value)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
