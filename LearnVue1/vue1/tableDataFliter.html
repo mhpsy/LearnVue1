@@ -23,6 +23,14 @@
                     {id:4,name:'update',sex:'man'},
                 ],
                 selectWord:''
+            },
+            watch:{
+                selectWord(newV,oldV){
+                    console.log('selectWord被调用了'+newV+'-'+oldV)
+                    this.meth = this.meth.filter((m)=>{
+                        return m.name.indexOf(newV)!==-1
+                    })
+                }
             }
         })
     </script>

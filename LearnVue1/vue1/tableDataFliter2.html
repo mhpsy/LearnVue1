@@ -6,33 +6,37 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-    <div id="root">
-        <input type="text" placeholder="please input name" v-model="selectWord">
-        <ul>
-            <li v-for="(m,index) in meth" :key="m.id">{{m.id}}--{{m.name}}--{{m.sex}}</li>
-        </ul>
-    </div>
-    <script>
-        new Vue({
-            el:'#root',
-            data:{
-                meth:[
-                    {id:1,name:'query',sex:'man'},
-                    {id:2,name:'select',sex:'man'},
-                    {id:3,name:'insert',sex:'man'},
-                    {id:4,name:'update',sex:'man'},
-                ],
-                selectWord:''
-            },
-            watch:{
-                selectWord(newV,oldV){
-                    console.log('selectWord被调用了'+newV+'-'+oldV)
-                    this.meth = this.meth.filter((m)=>{
-                        return m.name.indexOf(newV)!==-1
+<div id="root">
+    <input type="text" placeholder="please input name" v-model="selectWord">
+    <ul>
+        <li v-for="(m,index) in showMeth" :key="m.id">{{m.id}}--{{m.name}}--{{m.sex}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            selectWord: '',
+            meth: [
+                {id: 1, name: 'query', sex: 'man'},
+                {id: 2, name: 'select', sex: 'man'},
+                {id: 3, name: 'insert', sex: 'man'},
+                {id: 4, name: 'update', sex: 'man'},
+            ],
+            showMeth: []
+        },
+        watch: {
+            selectWord: {
+                immediate: true,
+                handler(newV, oldV) {
+                    console.log('selectWord被调用了' + newV + '-' + oldV)
+                    this.showMeth = this.meth.filter((m) => {
+                        return m.name.indexOf(newV) !== -1
                     })
                 }
             }
-        })
-    </script>
+        }
+    })
+</script>
 </body>
 </html>

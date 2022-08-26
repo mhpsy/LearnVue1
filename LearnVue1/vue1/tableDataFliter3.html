@@ -22,18 +22,13 @@
                 {id: 2, name: 'select', sex: 'man'},
                 {id: 3, name: 'insert', sex: 'man'},
                 {id: 4, name: 'update', sex: 'man'},
-            ],
-            showMeth: []
+            ]
         },
-        watch: {
-            selectWord: {
-                immediate: true,
-                handler(newV, oldV) {
-                    console.log('selectWord被调用了' + newV + '-' + oldV)
-                    this.showMeth = this.meth.filter((m) => {
-                        return m.name.indexOf(newV) !== -1
-                    })
-                }
+        computed: {
+            showMeth() {
+                return this.meth.filter((m) => {
+                    return m.name.indexOf(this.selectWord) !== -1
+                })
             }
         }
     })
