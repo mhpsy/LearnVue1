@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id = "root">
+        <h2>当前n的值是:<span v-text="n"></span></h2>
+        <h2>放大10倍后的值是:<span v-big="n"></span></h2>
+        <button @click="n++">点我n+1</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                n:1
+            },
+            directives:{
+                big(element,binding){
+                  element.innerText=binding.value*10
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+需求2：定义一个v-fbind指令，和v-bind功能类似，但可以让其所绑定的input元素默认获取焦点。
